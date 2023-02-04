@@ -383,7 +383,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    z-index: 1;
+    z-index: 0;
     padding: 3 0 0px 0;
   }
   .o-nas__text, .o-nas__li {
