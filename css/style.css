@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-around;
 }
 .o-nas__title {
-  padding: 20vh 0 20px 0;
+  padding: 15vh 0 20px 0;
   z-index: 0;
 }
 .o-nas__text, .o-nas__li {
@@ -508,7 +508,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   font-size: 20px;
   line-height: 22px;
-  padding: 0 0 1.83vw 0;
+  padding: 0,5 0 1.83vw 0;
   color: #ffffff;
 }
 .flex-right__icons {
