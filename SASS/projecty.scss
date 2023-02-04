@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@font-face {
+	font-family: 'Clear Sans Bold';
+	src: url('../fonts/clear_sans_bold/clear_sans_bold.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/clear_sans_bold/clear_sans_bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/clear_sans_bold/clear_sans_bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/clear_sans_bold/clear_sans_bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/clear_sans_bold/clear_sans_bold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/clear_sans_bold/clear_sans_bold.svg#clear_sans_bold') format('svg'); /* Chrome < 4, Legacy iOS */
+		font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+};
+@font-face {
+	font-family: 'Clear Sans';
+	src: url('..//fonts//clear_sans_regular/ClearSans.woff2') format('woff2'),
+		 url('..//fonts//clear_sans_regular/ClearSans.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+};
+
+@import 'nullstyle-perfect.scss';
+
+.container{
+	width: 81.8%;
+	margin:0 auto;
+}
+
+.wrapper {
+	background-color: #4b4bc2;
+	// width: 100%;
+	margin: 0 auto;
+	&__body {
+		padding: 16vh 0 0 0;
+	}
+	@media(max-width:820px){
+		&__body{
+			padding: 8vh 0 0 0;
+	}
+}
+}
+
+
+
+
+.header {
+		
+		&__body {
+			height: 16vh;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			left: 0;
+			z-index: 3;
+	}
+
+	&__body::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background: linear-gradient(180deg, #252526 0%, rgba(37, 37, 38, 0.5) 39.06%, rgba(37, 37, 38, 0) 100%);
+		z-index: 2;
+	}
+	
+	&__flex {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		padding-top: 5vh;
+		height: 4.78vh;
+		align-items: center;
+
+	}
+
+	&__logo {
+		padding: 0 40px 0 0;
+		position: relative;
+		z-index: 3;
+	}
+
+	&__burger{
+		display: none;
+		flex: 0 0 2.5%;
+		
+	}
+
+	&__menu {
+		display: flex;
+		flex-direction: row;
+		align-items: end;
+		justify-content: space-between;
+		flex: 0 0 56.75%;
+		position: relative;
+		z-index: 5;
+	}
+
+	
+	&__paragraph:hover {
+		color: #f2f0e8;
+	};
+	
+	&__paragraph{
+		padding: 0 15px 0 0;
+		color: #FFFFFF;
+		height: 15px;
+		font-family: 'Archivo Black';
+		font-style: normal;
+		font-weight: 900;
+		font-size: 14px;
+		line-height: 15px;
+		text-transform: uppercase;
+		white-space: nowrap;
+	}
+
+	@media (min-width:1700px){
+		&__paragraph{
+			font-size: 1vw;
+		};
+		&__logo img{
+			width: 10vw;
+			padding:0.5vw 0 0 0
+		}
+	}
+	
+	&__paragraph:last-child{
+		padding: 0;
+	}
+	@media (max-width:767px){
+	&__burger{
+			display: block;
+
+			position:relative;
+			width: 30px;
+			height: 20px;
+			padding: 0 30px 0 0;
+			position: relative;
+		z-index: 5;
+		}
+		&__burger::before,
+		&__burger::after{
+			content: '';
+			background-color: #fff;
+			position:absolute;
+			width: 100%;
+			height: 2px;
+			transition: all 0.3s ease 0s;
+		}
+		&__burger:before{
+			top: 0;
+		}
+		&__burger::after{
+			bottom: 0;
+		}
+
+		&__burger.header__burger-active::before{
+			transform: rotate(45deg);
+			top: 9px;
+			transition: all 0 3s ease 0s;
+		}
+		&__burger.header__burger-active::after{
+			transform: rotate(-45deg);
+			bottom: 9px;
+		}
+		
+		&__burger span{
+			width: 100%;
+			left: 0;
+			position: absolute;
+			top: 9px;
+			height: 2px;
+			background-color: #fff;
+			transition: all 0.3s ease 0s;
+		}
+
+		&__burger.header__burger-active span{
+			transform: scale(0);
+		}
+
+		&__body{
+			height: 50px;
+			// z-index: 2;
+			
+		}
+		&__logo img{
+			width: 97.5px;
+			height: 28px;
+		}
+
+		&__flex{
+			z-index: 2;
+			align-items: center;
+			padding: 7px 0 0 0;
+		}
+
+		&__menu{
+			position: fixed;
+			top: -100%;
+			left: 0;
+			width: 100%;
+			// height: 40px;
+			border-radius: 0 0 30px 30px;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: start;
+			background: #fafafa;
+			padding: 60px 9.1% 0;
+			transition: all 0.5s ease 0s;
+			z-index: 1;
+		}
+
+		&__menu.header__burger-active{
+			top: 0;
+		}
+
+		&__paragraph, &__paragraph:last-child{
+			margin: 0 0 20px 0;
+		}
+
+	}
+}
+
+.main {
+	
+
+	&__title {
+		margin: 0 0 8.17vh 0;
+		width: 35.8vw;
+		height: 4.131vw;
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100% 100% no-repeat;
+	}
+
+	&__content-body {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 3.73vh;
+	}
+
+	@media(max-width:820px){
+		&__content-body{
+			display: flex;
+			flex-direction: column;
+		}
+		&__body{
+			width: 80%;
+			margin: 0 auto;
+		}
+		&__title{
+			margin: 0 0 5.17vh 0;
+		}
+	}
+
+	&__link {
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0 no-repeat;
+	}
+
+}
+
+.content {
+	
+	&__item {
+		flex: 0 0 48.57%;
+		height: 23.85vw;
+		position: relative;
+		
+	}
+
+	&__item-bg1{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg2{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg3{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg4{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg5{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg6{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg7{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg8{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg9{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+	&__item-bg10{
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100%	97% no-repeat;
+	}
+
+	&__hover{
+		
+		position: absolute;
+		height: 100%;
+		width: 100%;z-index: 1;
+	}
+
+&__hover img{
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	
+}
+
+&__hover img:hover{
+	opacity: 0.5;
+}
+
+	
+	&__item-link {
+		// height: 23.85vw;
+		height: 100%;
+		width: 100%;
+		// z-index: 2;
+		// position: absolute;
+	}
+
+	
+
+	&__item-body {
+		// background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/cover no-repeat;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	
+
+	&__item-name-date {
+		font-family: 'Clear Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 1.67vw;
+line-height: 2.25vw;
+
+color: #FFFFFF;
+
+	}
+
+	&__item-name-date div{
+		padding: 0 0 1vw 1.62vw;
+	}
+	&__item-name-place {
+		display: flex;
+		align-items: center;
+		font-family: 'Archivo black';
+		font-style: normal;
+		font-weight: 900;
+		font-size: 1.67vw;
+		line-height: 1.83vw;
+		/* identical to box height */
+		text-transform: uppercase;
+		color: #000000;
+		width: 31.51vw;
+		height: 4.42vw;
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100% 100%	 no-repeat;
+	}
+
+	&__item-name-place div{
+		padding: 0 0 0 1.62vw;
+	}
+
+	@media(max-width:820px){
+		&__item-body{
+			padding:35vw 0 0 0;
+		}
+		&__item-name-date{
+			font-size: 3vw;
+			line-height: 3.8vw;
+		}
+		&__item-name-place{
+			font-size: 3vw;
+			line-height: 3.2vw;
+			width: 55vw;
+			height: 8vw;
+		}
+		&__item-name-date div{
+			padding: 0 0 1vw 1.62vw;
+		}
+		&__item-name-place div{
+			padding: 0 0 0 1.62vw;
+		}
+	}
+
+}
+
+.main {
+
+	&__link-home {
+		padding: 4vh 0 4vh 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__link-home-body {
+		// display: inline-block;
+		font-family: 'Clear Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 2.96vh;
+line-height: 4.01vh;
+/* identical to box height */
+
+
+
+	}
+
+	&__link-home-body a{
+		color: #FFFFFF;
+		position: relative;
+	}
+
+	&__link-home-body a:hover{
+		color: #f1efe7;
+	}
+
+	&__link-home-body a::before{
+		content: '';
+		position: absolute;
+		width: 2.04vh;
+		height: 2.06vh;
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100% 100% no-repeat;
+		top: 34%;
+		left: -15%;
+	}
+
+}
+

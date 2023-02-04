@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@font-face {
+	font-family: 'Clear Sans Bold';
+	src: url('../fonts/clear_sans_bold/clear_sans_bold.eot'); /* IE 9 Compatibility Mode */
+	src: url('../fonts/clear_sans_bold/clear_sans_bold.eot?#iefix') format('embedded-opentype'), /* IE < 9 */
+		url('../fonts/clear_sans_bold/clear_sans_bold.woff2') format('woff2'), /* Super Modern Browsers */
+		url('../fonts/clear_sans_bold/clear_sans_bold.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
+		url('../fonts/clear_sans_bold/clear_sans_bold.ttf') format('truetype'), /* Safari, Android, iOS */
+		url('../fonts/clear_sans_bold/clear_sans_bold.svg#clear_sans_bold') format('svg'); /* Chrome < 4, Legacy iOS */
+		font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+};
+@font-face {
+	font-family: 'Clear Sans';
+	src: url('..//fonts//clear_sans_regular/ClearSans.woff2') format('woff2'),
+		 url('..//fonts//clear_sans_regular/ClearSans.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+};
+
+@import 'nullstyle-perfect.scss';
+
+body{
+	line-height: 1;
+	font-style: 16px;
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #1b1bc4;
+}
+
+.main{
+	flex: 1 1 auto;
+}
+
+
+.container{
+	width: 81.8%;
+	margin:0 auto;
+	height: 100%;
+}
+
+.header {
+		
+	&__body {
+		height: 16vh;
+		position: fixed;
+		width: 100%;
+		top: 0;
+		left: 0;
+		z-index: 3;
+}
+
+&__body::before{
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(180deg, #252526 0%, rgba(37, 37, 38, 0.5) 39.06%, rgba(13, 13, 226, 0) 100%);
+	z-index: 2;
+}
+
+&__flex {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 5vh;
+	height: 4.78vh;
+	align-items: center;
+
+}
+
+&__logo {
+	padding: 0 40px 0 0;
+	position: relative;
+	z-index: 3;
+}
+
+&__burger{
+	display: none;
+	flex: 0 0 2.5%;
+	
+}
+
+&__menu {
+	display: flex;
+	flex-direction: row;
+	align-items: end;
+	justify-content: space-between;
+	flex: 0 0 56.75%;
+	position: relative;
+	z-index: 5;
+}
+
+
+&__paragraph:hover {
+	color: #ffffff;
+};
+
+&__paragraph{
+	padding: 0 15px 0 0;
+	color: #1d0101;
+	height: 15px;
+	font-family: 'Archivo Black';
+	font-style: normal;
+	font-weight: 900;
+	font-size: 14px;
+	line-height: 15px;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+@media (min-width:1700px){
+	&__paragraph{
+		font-size: 1vw;
+	};
+	&__logo img{
+		width: 10vw;
+		padding:0.5vw 0 0 0
+	}
+}
+
+&__paragraph:last-child{
+	padding: 0;
+}
+@media (max-width:767px){
+&__burger{
+		display: block;
+
+		position:relative;
+		width: 30px;
+		height: 20px;
+		padding: 0 30px 0 0;
+		position: relative;
+	z-index: 5;
+	}
+	&__burger::before,
+	&__burger::after{
+		content: '';
+		background-color: #fff;
+		position:absolute;
+		width: 100%;
+		height: 2px;
+		transition: all 0.3s ease 0s;
+	}
+	&__burger:before{
+		top: 0;
+	}
+	&__burger::after{
+		bottom: 0;
+	}
+
+	&__burger.header__burger-active::before{
+		transform: rotate(45deg);
+		top: 9px;
+		transition: all 0 3s ease 0s;
+	}
+	&__burger.header__burger-active::after{
+		transform: rotate(-45deg);
+		bottom: 9px;
+	}
+	
+	&__burger span{
+		width: 100%;
+		left: 0;
+		position: absolute;
+		top: 9px;
+		height: 2px;
+		background-color: #fff;
+		transition: all 0.3s ease 0s;
+	}
+
+	&__burger.header__burger-active span{
+		transform: scale(0);
+	}
+
+	&__body{
+		height: 50px;
+		// z-index: 2;
+		
+	}
+	&__logo img{
+		width: 97.5px;
+		height: 28px;
+	}
+
+	&__flex{
+		z-index: 2;
+		align-items: center;
+		padding: 7px 0 0 0;
+	}
+
+	&__menu{
+		position: fixed;
+		top: -100%;
+		left: 0;
+		width: 100%;
+		// height: 40px;
+		border-radius: 0 0 30px 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: start;
+		background: #5a553d;
+		padding: 60px 9.1% 0;
+		transition: all 0.5s ease 0s;
+		z-index: 1;
+	}
+
+	&__menu.header__burger-active{
+		top: 0;
+	}
+
+	&__paragraph, &__paragraph:last-child{
+		margin: 0 0 20px 0;
+	}
+
+}
+}
+
+.main {
+	&__body{
+			margin: 20vh 0 0 0;
+			position: relative;
+		}
+		
+		&__name{
+			position: absolute;
+			z-index: 2;
+			top: -6%;
+			left: -0.09%;
+		}
+
+		
+
+		&__item-name-date {
+			font-family: 'Archivo black';
+			font-style: normal;
+			font-weight: 900;
+			font-size: 2.917vw;
+			line-height: 3.17vw;
+			/* identical to box height */
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: #090808;
+			
+		}
+
+		&__item-name-place {
+			display: flex;
+    		align-items: center;
+    		font-family: "Archivo black";
+    		font-style: normal;
+    		font-weight: 900;
+    		font-size: 1.67vw;
+    		line-height: 1.83vw;
+    		text-transform: uppercase;
+    		color: #000000;
+    		width: 31.51vw;
+			padding: 0 0 0 1.62vw;
+    		height: 4.42vw;
+    		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100% 100% no-repeat;
+		}
+
+		&__sliders {
+			max-width: 100%;
+			padding: 0 0 0.5vh 0;
+		}
+
+		&__slider-block {
+			width: 100%;
+			display: inline-block;
+		}
+
+		
+
+		&__slider-wrapper{
+			// width: 89.45vw;
+			// height: 53.71vw;
+			margin: 0 0 0 -3.06vw;
+			position: relative;
+		}
+		
+		&__slider-wrapper img{
+		width: 100%;
+		}
+
+		.btn{
+			background: transparent;
+		} 
+		.slider-btn{
+			width: 2.66vw;
+			height: 2.66vw;
+			border-radius: 50%;
+			position: absolute;
+			z-index: 2;
+			top: 50%;
+			transform: translateY(-50%);
+			transition: all 0.3s ease-in-out;
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+
+
+		.slider-prev{
+			left: 1.7vw;
+		}
+		.slider-next{
+			right: 1.7vw;
+		}
+
+		.slider-btn img{
+			width: 100%;
+			height: 100%;
+		}
+
+		.slick-dots{
+			position: absolute;
+			left: 50%;
+			bottom: 6%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 1vw;
+
+			& li{
+				line-height: 0;
+				font-size: 0;
+			}
+
+			& li button{
+				line-height: 0;
+				font-size: 0;
+				width: 1.03vw;
+				height: 1.03vw;
+				border-radius: 50%;
+				border: 0.2vw solid rgb(254, 253, 253);
+				background: transparent;
+			}
+			
+
+		}
+		.slick-dots li.slick-active button{
+				border: none;
+				background-color: #fffffe;
+			}
+
+		.main {
+
+			&__sliders-two {
+				max-width: 100%;
+				max-width: 100%;
+			}
+	
+			&__slider-block-two {
+				width: 100%;
+			display: inline-block;
+			// padding: 0 5vw 0 0;
+			}
+
+			
+	
+			&__slider-wrapper-two {
+				width: 13.4vw;
+				height: 9vw;
+			}
+	
+	}
+	.slick-slide img{
+		width: 100%;
+				height: 100%;
+	}
+	
+	
+
+		&__content {
+			padding: 4vh 0 0 10.5vw;
+		}
+
+		
+		&__text {
+			font-family: "Clear Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.33vw;
+    line-height: 2.17vw;
+    color: #0e0d0d;
+		}
+
+		
+		&__li {
+			font-family: "Clear Sans";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.33vw;
+    line-height: 2.17vw;
+    color: #FFFFFF;
+	 position: relative;
+    padding: 0 0 0 1vh;
+		}
+		&__li::before {
+			content: "";
+			position: absolute;
+			width: 0.5vh;
+			height: 0.5vh;
+			border-radius: 50%;
+			background-color: #f7f5ec;
+			left: 0;
+			bottom: 40%;
+}
+}
+
+.main .slick-slide img {
+	width: 100%;
+	height: auto;
+}
+
+
+.footer {
+	padding: 4.01vh 0 2.08vh 0;
+	&__wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+	&__wrapper a{
+		font-family: 'Clear Sans';
+		font-style: normal;
+		font-weight: 700;
+		font-size: 1.83vw;
+		line-height: 2.5vw;
+		/* identical to box height */
+		color: #000000;
+		position: relative;
+	}
+	&__wrapper a:hover{
+		color: #ebeae4;
+	}
+	&__wrapper a::before{
+		content: '';
+		position: absolute;
+		width: 2.04vh;
+		height: 2.06vh;
+		background: url(img1/1617800580_9-p-belii-odnotonnii-fon-9.jpg) 0 0/100% 100% no-repeat;
+		top: 29%;
+		left: -45%;
+	}
+	&__wrapper a:before:hover{
+		background-color: #eceae0;
+	}
+
+
+
+}
+
+
